@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="/add_employee" class="btn btn-primary btn-md" role="button" style="float: right;">Add Employee</a>
+<br><br>
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">User ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Department</th>
+      <th scope="col">Salary</th>
+      <th scope="col">TC</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for emp in emp_list %}
+      <tr>
+        <th scope="row">{{emp.E_ID}}</th>
+        <td>{{emp.E_UserID}}</td>
+        <td>{{emp.E_Name}}</td>
+        <td>{{emp.E_Department}}</td>
+        <td>{{emp.E_Salary}}</td>
+        <td>{{emp.E_TC}}</td>
+        <td style="text-align: center;display: flex;"><a href="/delete_employee/{{emp.E_ID}}" class="btn btn-danger btn-sm" role="button"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+      </tr>
+    {%endfor%}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h4>Add Employee</h4>
+    <div class="box">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="notification is-danger">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <form method="POST" action="/add_employee">
+            <div class="field">
+                <div class="control">
+                    <input class="input" type="text" name="name" placeholder="Name" autofocus="">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <input class="input" type="text" name="user_id" placeholder="User Id">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <div class="select is-fullwidth"> <!-- Adding the 'select' class for Bulma styling -->
+                        <select name="department">
+                            <option value="" disabled selected>Select Department</option>
+                            <option value="Office assistant">Office assistant</option>
+                            <option value="HR">HR</option>
+                            <option value="Board Members">Board Members</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="field">
+                <div class="control">
+                    <input class="input" type="number" name="salary" placeholder="Salary">
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <input class="input" type="password" name="password" placeholder="Password">
+                </div>
+            </div>
+            <select class="custom-select" name="access">
+                <option selected disabled value="0">Access</option>
+                <option value="TS">TS</option>
+                <option value="S">S</option>
+                <option value="C">C</option>
+              </select>
+            <br><br>
+            <button class="button is-block is-info is-large is-fullwidth">Create</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
