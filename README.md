@@ -1,7 +1,7 @@
 
 # Encryption Based on Multilevel Security for Relational Database (EBMSR)
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/your-username/your-repo-name/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Sivarooprr/EBMSR/blob/main/LICENSE)
 
 ## Overview
 
